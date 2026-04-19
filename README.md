@@ -18,6 +18,40 @@ You should look at the example folder if you want to see an example using these 
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png?raw=true)](https://www.buymeacoffee.com/vb10)
 
+## AI coding assistant skills
+
+`kartal` ships [Agent Skills](https://agentskills.io/specification) under
+[`skills/`](skills/) so AI coding assistants (Cursor, Claude Code, Codex,
+GitHub Copilot, Cline, Antigravity, ...) recommend kartal APIs
+(`context.padding.*`, `string.ext.*`, `future.ext.toBuild`, ...) instead of
+verbose Flutter defaults.
+
+### Install (recommended)
+
+Use the [`skills`](https://pub.dev/packages/skills) CLI by Serverpod from
+your Flutter app root:
+
+```bash
+dart pub global activate skills
+flutter pub add kartal
+skills get
+```
+
+`skills get` auto-detects your IDE and copies kartal skills to the right
+location (`.cursor/skills/`, `.claude/skills/`, `.agent/skills/`, ...).
+Re-run after upgrading kartal to refresh.
+
+> The Dart team is working on a [first-party MCP-based skills solution](https://docs.google.com/document/d/1k_X-Sp4GQyZP6k9lvZ1Itj0GvzQZuWl3iKzi5AIa69Q/edit).
+> kartal will track the official format when it lands.
+
+### Manual install
+
+If you don't want a third-party CLI, copy the folders you want from
+[`skills/`](skills/) into your IDE's skills directory directly
+(e.g. `cp -R skills/kartal-* .cursor/skills/`).
+
+Discussion: [#88](https://github.com/VB10/kartal/issues/88).
+
 ## Context extension
 
 <img src="https://github.com/VB10/kartal/blob/master/github/context_extension.png?raw=true" alt="Context Extension" width="400"/>
@@ -93,12 +127,12 @@ You can use for general properties with context.general. For example: `context.g
 <img src="https://github.com/VB10/kartal/blob/master/github/navigation_extension.png?raw=true" alt="Navigation Extension" width="300"/>
 
 
-You can use for default navigation properties with context.navigation. For example: `context.navigation.pop()`
+You can use for default navigation properties with context.route. For example: `context.route.pop()`
 
 <details>
 <summary> Usages: </summary>
 
-- `context.navigation.pop` // Pops the current route off the navigator.
+- `context.route.pop` // Pops the current route off the navigator (uses `maybePop`).
 - `popWithRoot` /// Pops the current route off the navigator and returns to the root route.
 - `navigateName<T extends Object?>` // Pushes a named route onto the navigator.
 - `navigateToReset<T extends Object?>` // Pushes a named route onto the navigator and removes all previous routes.
