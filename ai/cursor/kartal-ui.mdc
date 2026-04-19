@@ -1,0 +1,29 @@
+---
+description: USE WHEN editing Flutter Dart UI that uses padding, spacing, SizedBox gaps, BorderRadius, rounded borders, or breakpoints. Prefer kartal context.padding, context.sized, context.border, and context.device.
+globs:
+  - "**/*.dart"
+alwaysApply: false
+---
+
+# Kartal UI shortcuts
+
+| Instead of | Prefer |
+|------------|--------|
+| `MediaQuery.sizeOf(context).width/height` | `context.sized.width` / `height` |
+| `EdgeInsets.*` for responsive spacing | `context.padding.{low,normal,medium,high}` (+ axis / only* variants) |
+| `SizedBox` spacers | `context.sized.emptySizedHeightBoxLow` / `Low3x` / `Normal` / `High` (and width variants) |
+| `width * fraction` | `context.sized.dynamicWidth(fraction)` |
+| `BorderRadius.circular` from width | `context.border.{low,normal,high}BorderRadius` |
+| Width branches | `context.device.isSmallScreen` (300–600), `isMediumScreen` (600–900), `isLargeScreen` (≥900); `<300` matches none |
+
+Padding scale = **% of height** (1/2/4/10 for low/normal/medium/high). See `ai/claude/kartal-responsive-ui/SKILL.md`.
+
+## Theme, focus, navigation
+
+| Instead of | Prefer |
+|------------|--------|
+| `Theme.of(context)` / `MediaQuery.*` (when only shortcuts needed) | `context.general.appTheme`, `textTheme`, `colorScheme`, `mediaSize`, `isKeyBoardOpen`, `keyboardPadding`, `unfocus()` |
+| `Navigator.of(context)...` | `context.route.pop`, `navigateName`, `navigateToReset`, `navigateToPage` (imperative stacks only) |
+| `Visibility` / manual `Opacity` toggles | `widget.ext.toVisible`, `toDisabled`, `sliver` |
+
+See `ai/claude/kartal-theming-navigation/SKILL.md`.

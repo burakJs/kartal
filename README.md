@@ -18,6 +18,26 @@ You should look at the example folder if you want to see an example using these 
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png?raw=true)](https://www.buymeacoffee.com/vb10)
 
+## AI coding assistant skills
+
+Optional rules and skills so tools such as **Cursor**, **Claude Code**, or **Codex** suggest kartal APIs (`context.padding.*`, `string.ext.*`, `future.ext.toBuild`, …) instead of only verbose Flutter defaults. Files live under [`ai/`](ai/); copy them into **your app** repository (they are not applied automatically by `flutter pub add kartal`).
+
+**Cursor** — from your Flutter app root:
+
+```bash
+mkdir -p .cursor/rules
+for f in kartal-overview kartal-ui kartal-string kartal-async kartal-utility; do
+  curl -fsSL -o ".cursor/rules/${f}.mdc" \
+    "https://raw.githubusercontent.com/VB10/kartal/master/ai/cursor/${f}.mdc"
+done
+```
+
+**Claude Code** — copy skill folders into `.claude/skills/` (see [`ai/README.md`](ai/README.md)).
+
+**AGENTS.md** — paste [`ai/agents/AGENTS.snippet.md`](ai/agents/AGENTS.snippet.md) into your project’s `AGENTS.md` between the `<!-- kartal:start -->` / `<!-- kartal:end -->` markers.
+
+**Optional check:** [`ai/MANUAL_EVAL.md`](ai/MANUAL_EVAL.md). Proposal / discussion: [#88](https://github.com/VB10/kartal/issues/88).
+
 ## Context extension
 
 <img src="https://github.com/VB10/kartal/blob/master/github/context_extension.png?raw=true" alt="Context Extension" width="400"/>
@@ -93,12 +113,12 @@ You can use for general properties with context.general. For example: `context.g
 <img src="https://github.com/VB10/kartal/blob/master/github/navigation_extension.png?raw=true" alt="Navigation Extension" width="300"/>
 
 
-You can use for default navigation properties with context.navigation. For example: `context.navigation.pop()`
+You can use for default navigation properties with context.route. For example: `context.route.pop()`
 
 <details>
 <summary> Usages: </summary>
 
-- `context.navigation.pop` // Pops the current route off the navigator.
+- `context.route.pop` // Pops the current route off the navigator (uses `maybePop`).
 - `popWithRoot` /// Pops the current route off the navigator and returns to the root route.
 - `navigateName<T extends Object?>` // Pushes a named route onto the navigator.
 - `navigateToReset<T extends Object?>` // Pushes a named route onto the navigator and removes all previous routes.

@@ -1,0 +1,15 @@
+---
+alwaysApply: true
+---
+
+# Kartal package
+
+This repo ships **kartal**, Flutter extensions on `BuildContext`, `String`, `Future`, collections, and small utilities.
+
+- Human docs: root `README.md`.
+- Agent-focused rules: `ai/cursor/*.mdc` (this file + scoped Dart rules).
+- Claude skills: `ai/claude/*/SKILL.md`.
+
+When editing **user apps** that depend on kartal, prefer kartal APIs from those rules instead of reintroducing verbose `MediaQuery` / `Navigator` / `FutureBuilder` boilerplate—unless a scoped rule or `kartal-do-not-overuse` says otherwise.
+
+Do **not** modify generated Dart (`*.g.dart`, `*.freezed.dart`, …).

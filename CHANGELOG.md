@@ -1,3 +1,7 @@
+## [Unreleased]
+
+- Added `ai/` directory with Claude Code skills, Cursor `.mdc` rules, `AGENTS.md` snippet, and manual eval notes; added `test/ai_skills_test.dart` to keep AI docs aligned with `lib/`. ([#88](https://github.com/VB10/kartal/issues/88))
+
 # [4.0.0]
 - Added web support for all extension
 - Updated documentation for general
