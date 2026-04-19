@@ -1,6 +1,6 @@
 ## [Unreleased]
 
-- Added `ai/` directory with Claude Code skills, Cursor `.mdc` rules, `AGENTS.md` snippet, and manual eval notes; added `test/ai_skills_test.dart` to keep AI docs aligned with `lib/`. ([#88](https://github.com/VB10/kartal/issues/88))
+- Added `skills/` directory with 9 [Agent Skills](https://agentskills.io/specification) (`kartal-*`) so the [`skills`](https://pub.dev/packages/skills) CLI can install kartal docs into Cursor, Claude Code, Codex, GitHub Copilot, Cline, and Antigravity. ([#88](https://github.com/VB10/kartal/issues/88))
 
 # [4.0.0]
 - Added web support for all extension

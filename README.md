@@ -20,23 +20,37 @@ You should look at the example folder if you want to see an example using these 
 
 ## AI coding assistant skills
 
-Optional rules and skills so tools such as **Cursor**, **Claude Code**, or **Codex** suggest kartal APIs (`context.padding.*`, `string.ext.*`, `future.ext.toBuild`, …) instead of only verbose Flutter defaults. Files live under [`ai/`](ai/); copy them into **your app** repository (they are not applied automatically by `flutter pub add kartal`).
+`kartal` ships [Agent Skills](https://agentskills.io/specification) under
+[`skills/`](skills/) so AI coding assistants (Cursor, Claude Code, Codex,
+GitHub Copilot, Cline, Antigravity, ...) recommend kartal APIs
+(`context.padding.*`, `string.ext.*`, `future.ext.toBuild`, ...) instead of
+verbose Flutter defaults.
 
-**Cursor** — from your Flutter app root:
+### Install (recommended)
+
+Use the [`skills`](https://pub.dev/packages/skills) CLI by Serverpod from
+your Flutter app root:
 
 ```bash
-mkdir -p .cursor/rules
-for f in kartal-overview kartal-ui kartal-string kartal-async kartal-utility; do
-  curl -fsSL -o ".cursor/rules/${f}.mdc" \
-    "https://raw.githubusercontent.com/VB10/kartal/master/ai/cursor/${f}.mdc"
-done
+dart pub global activate skills
+flutter pub add kartal
+skills get
 ```
 
-**Claude Code** — copy skill folders into `.claude/skills/` (see [`ai/README.md`](ai/README.md)).
+`skills get` auto-detects your IDE and copies kartal skills to the right
+location (`.cursor/skills/`, `.claude/skills/`, `.agent/skills/`, ...).
+Re-run after upgrading kartal to refresh.
 
-**AGENTS.md** — paste [`ai/agents/AGENTS.snippet.md`](ai/agents/AGENTS.snippet.md) into your project’s `AGENTS.md` between the `<!-- kartal:start -->` / `<!-- kartal:end -->` markers.
+> The Dart team is working on a [first-party MCP-based skills solution](https://docs.google.com/document/d/1k_X-Sp4GQyZP6k9lvZ1Itj0GvzQZuWl3iKzi5AIa69Q/edit).
+> kartal will track the official format when it lands.
 
-**Optional check:** [`ai/MANUAL_EVAL.md`](ai/MANUAL_EVAL.md). Proposal / discussion: [#88](https://github.com/VB10/kartal/issues/88).
+### Manual install
+
+If you don't want a third-party CLI, copy the folders you want from
+[`skills/`](skills/) into your IDE's skills directory directly
+(e.g. `cp -R skills/kartal-* .cursor/skills/`).
+
+Discussion: [#88](https://github.com/VB10/kartal/issues/88).
 
 ## Context extension
 
