@@ -92,9 +92,9 @@ You can use for device properties with context.device. For example: `context.dev
 <details>
 <summary> Usages: </summary>
 
-- `context.device.isSmallScreen` // The range is defined as `0 <= width < 300`.
-- `context.device.isMediumScreen` // The range is defined as `300 <= width < 600`.
-- `context.device.isLargeScreen` // The range is defined as `600 <= width < 900`.
+- `context.device.isSmallScreen` // The range is defined as `300 <= width < 600`.
+- `context.device.isMediumScreen` // The range is defined as `600 <= width < 900`.
+- `context.device.isLargeScreen` // The range is defined as `width >= 900`.
 - `context.device.isAndroidDevice` // Returns true if the device is an Android device.
 - `context.device.isIOSDevice`  // Returns true if the device is an iOS device.
 - `context.device.isWindowsDevice` // Returns true if the device is a Windows device.
@@ -248,7 +248,7 @@ You can use for string properties with string.ext. For example: `string.ext.toCa
 - `'SAMPLE'.launchPhone` (Future<bool>): Launches the phone app with the phone number.
 - `'SAMPLE'.launchWebsite` (Future<bool>): Launches the website with the string as the URL.
 - `'SAMPLE'.launchWebsiteCustom` (Future<bool>): Launches the website with custom configuration.
-- `'SAMPLE'.launchMap` (Future<bool>): Launches the map with any value.
+- `'SAMPLE'.launchMaps` (Future<bool>): Launches the map with any value.
 - `'SAMPLE'.shareWhatsApp()` (Future<void>): Shares the string via WhatsApp.
 - `'SAMPLE'.shareMail(String title)` (Future<void>): Shares the string via email with a title.
 - `'SAMPLE'.share()` (Future<void>): Shares the string.
@@ -340,10 +340,10 @@ You can parse your asset file with generic way.
 
 ## Iterable Extension
 
-You can use for Iterable properties with iterable.ext. For example: `iterable.ext.makeSafe()`
+You can use for Iterable properties with iterable.exts. For example: `iterable.exts.makeSafe()`
 
-- `[null,1].makeSafe()` // Returns a list with non-null values.
-- `[null,1].makeSafeCustom(bool Function(T? value) onHandle)` // Returns a list with non-null values based on the custom function.
+- `[null,1].exts.makeSafe()` // Returns a list with non-null values.
+- `[null,1].exts.makeSafeCustom(bool Function(T? value) onHandle)` // Returns a list with non-null values based on the custom function.
 
 ## List Extension
 
