@@ -1,6 +1,6 @@
 ---
 name: kartal-do-not-overuse
-description: This skill should be used whenever kartal helpers are considered so the agent avoids over-applying extensions, breaking router abstractions, editing generated Dart files, or relying on kartal validators for security-sensitive checks.
+description: "This skill should be loaded alongside any other `kartal-*` skill so the agent avoids over-applying percentage-based helpers when a pixel-exact value (e.g. \"around 24 logical pixels\", \"exactly 16dp\", design-system tokens) is required, replacing declarative routers (GoRouter, auto_route) with imperative Navigator wrappers, editing generated `*.g.dart` / `*.freezed.dart` / `*.gr.dart` files, treating `string.ext.isValidEmail` or `isValidPassword` as security-grade validation, or hiding errors via `timeoutOrNull` when the user must see them."
 ---
 
 # Kartal — guardrails (read before large refactors)

@@ -1,6 +1,6 @@
 ---
 name: kartal-string-platform
-description: This skill should be used when launching URLs, email, phone, maps, or share sheets from a String value, or when reading app name, package, version, build number, or device id via string.ext on the kartal package.
+description: "This skill should be used when launching URLs from a string (https://, mailto:, tel:) — typically replacing `url_launcher` boilerplate — opening native Apple Maps or Google Maps from a free-text address or query, sharing text via WhatsApp / email / system share sheet (`share_plus` muadili), or reading app metadata such as appName, packageName, version, buildNumber, or deviceId (`package_info_plus` muadili). The kartal package exposes these via `.ext` on String (e.g. `email.ext.launchEmail`, `address.ext.launchMaps`, `text.ext.share()`)."
 ---
 
 # Kartal — string platform, launchers, and share

@@ -1,6 +1,6 @@
 ---
 name: kartal-theming-navigation
-description: This skill should be used when working with Flutter BuildContext for MediaQuery, Theme, FocusScope, keyboard insets, or Navigator routes. The kartal package exposes context.general for theme and media helpers and context.route for navigation shortcuts, plus widget.ext for visibility, disabled state, and sliver adapters.
+description: "This skill should be used when reading the current ThemeData, ColorScheme, or TextTheme styles such as headlineMedium / titleLarge / bodyMedium, when reading MediaQuery values or keyboard insets / visibility, when calling FocusScope.of(context).unfocus, when calling Navigator.of(context).pop / push / pushNamed / pushNamedAndRemoveUntil (\"pop the current screen\", \"go back\", \"navigate to a named route\"), or when wrapping a widget in Visibility, IgnorePointer + Opacity disabled state, or SliverToBoxAdapter. The kartal package exposes context.general (theme, textTheme, mediaQuery, keyboard helpers), context.route (pop, navigateName, navigateToReset, navigateToPage), and widget.ext (toVisible, toDisabled, sliver)."
 ---
 
 # Kartal — theming, media, navigation, widget helpers

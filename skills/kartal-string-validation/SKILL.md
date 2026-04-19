@@ -1,6 +1,6 @@
 ---
 name: kartal-string-validation
-description: This skill should be used when validating or transforming nullable or non-nullable Dart strings, parsing colors from hex, counting lines, building bearer headers, or decoding JSON from a string on a background isolate. The kartal package exposes these through string.ext on String and String?.
+description: "This skill should be used when validating Dart strings — email format, password rules, null or empty checks — typically inside a TextFormField / FormField `validator` callback, when capitalizing or title-casing text, when parsing a hex color string into a Color, when counting lines, when building a Bearer Authorization header map, or when decoding JSON from a String on a background isolate. The kartal package adds these via `.ext` on String and String? (e.g. `value.ext.isValidEmail`, `value.ext.isNullOrEmpty`, `value.ext.toCapitalized`, `value.ext.color`, `value.ext.safeJsonDecodeCompute`)."
 ---
 
 # Kartal — string validation, formatting, and core helpers

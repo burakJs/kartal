@@ -1,6 +1,6 @@
 ---
 name: kartal-overview
-description: This skill should be used when the Flutter project depends on the kartal package and the agent needs a compact map of which kartal skill to load for context extensions, strings, async UI, loaders, or utilities.
+description: "This skill should be used as the first kartal skill loaded whenever a Flutter project imports `package:kartal/kartal.dart` or lists kartal in `pubspec.yaml`. It maps which other `kartal-*` skill to consult for BuildContext extensions, strings, futures, loaders, navigation, theming, or utilities."
 ---
 
 # Kartal — overview for agents

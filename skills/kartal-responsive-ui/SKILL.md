@@ -1,6 +1,6 @@
 ---
 name: kartal-responsive-ui
-description: This skill should be used when writing or modifying Flutter UI that uses padding, spacing, SizedBox spacers, border radius, rounded rectangle borders, or responsive width or height. The kartal package exposes context.padding, context.sized, context.border, and context.device on BuildContext for percentage-based layout helpers.
+description: "This skill should be used when writing or editing Flutter UI that touches padding, margin, EdgeInsets, EdgeInsets.symmetric, EdgeInsets.all or EdgeInsets.only, SizedBox spacers or vertical/horizontal gaps between widgets, BorderRadius.circular or rounded button/card corners, screen-size breakpoints (small/medium/large, mobile/tablet), or any width/height computed from MediaQuery, screen size, or a screen percentage like \"60% of the screen width\" or `screenWidth * 0.6`. The kartal package exposes context.padding for percentage-based EdgeInsets, context.sized for SizedBox helpers and `dynamicWidth(v)` / `dynamicHeight(v)` fractions of MediaQuery, context.border for radii, and context.device for breakpoints."
 ---
 
 # Kartal — responsive UI (`context.padding`, `context.sized`, `context.border`, `context.device`)

@@ -1,6 +1,6 @@
 ---
 name: kartal-utilities
-description: This skill should be used when opening maps from encoded queries, decoding JSON assets from the Flutter bundle, fetching HTML link previews, logging errors, mapping HTTP status codes to colors, using device utilities, or using small widget extensions on Image, GlobalKey, Color, int, bool, DateTime, and File from the kartal package.
+description: "This skill should be used when opening Apple Maps or Google Maps from a query string (MapsUtility), decoding JSON assets from the Flutter `rootBundle` into typed models (BundleDecoder), fetching Open Graph / Twitter card link previews (CustomLinkPreview), logging errors with a type prefix (CustomLogger), mapping HTTP status codes to colors (HttpResult / int.ext.httpStatusColor), detecting iPad (DeviceUtility.isIpad), measuring widgets via GlobalKey (rendererBox, offset, scrollToWidget), rotating an Image (RotationTransition shortcuts), or using small extensions on bool, Color, DateTime, File, and primitive types."
 ---
 
 # Kartal — utilities and small widget / primitive extensions

@@ -1,6 +1,6 @@
 ---
 name: kartal-async-future
-description: This skill should be used when mapping a Future to Flutter widgets, adding timeouts that swallow errors, JSON-encoding a Map off the UI thread, or filtering nulls from iterables and lists. The kartal package provides future.ext, map.ext, iterable.exts, and list.ext helpers.
+description: "This skill should be used when replacing a verbose FutureBuilder + ConnectionState switch with a single-line widget builder, when adding a safe timeout to a Future that returns null instead of throwing, when running jsonEncode of a large Map off the UI thread via `compute`, or when removing null entries from a List or Iterable. The kartal package exposes future.ext.toBuild, future.ext.timeoutOrNull, map.ext.safeJsonEncodeCompute, list.ext.makeSafe, and iterable.exts.makeSafe."
 ---
 
 # Kartal — async UI, JSON compute, safe collections

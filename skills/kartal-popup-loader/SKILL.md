@@ -1,6 +1,6 @@
 ---
 name: kartal-popup-loader
-description: This skill should be used when showing or hiding a global modal loading indicator built on Navigator dialog routes. The kartal package exposes context.popupManager with showLoader and hideLoader backed by PopupManager and LoaderRoute.
+description: "This skill should be used when showing or hiding a blocking modal loading indicator — typically a full-screen spinner, CircularProgressIndicator inside `showDialog`, or \"block UI while awaiting\" pattern — before and after an async call, or when dismissing the latest loader without manual `Navigator.of(context).pop()` tracking. The kartal package exposes `context.popupManager.showLoader()` and `hideLoader()` backed by a root-navigator dialog route, with optional `id` for concurrent loaders."
 ---
 
 # Kartal — popup loader manager
